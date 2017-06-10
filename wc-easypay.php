@@ -110,8 +110,9 @@ function woocommerce_easypay() {
 			
             $order = new WC_Order($order_id);
             
-            $totalamount = floatval( preg_replace( '#[^\d.]#', '', $woocommerce->cart->get_cart_total() ) );
-
+            //$totalamount = floatval( preg_replace( '#[^\d.]#', '', $woocommerce->cart->get_cart_total() ) );
+	$totalamount = floatval( preg_replace( '#[^\d.]#', '', WC()->cart->total ) );
+	
             $website_url = home_url( '/' );
             
             return array(
